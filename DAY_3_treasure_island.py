@@ -44,9 +44,10 @@ if xroad == "left":
       print("You are engulfed by fire and die a terrible, horrible death. That's rough, buddy. Game over.")
     elif door == "blue":
       print("A rabid squirrel leaps from behind the door and eats you alive. Them's the breaks. Game over.")
-    else:
+    elif door == "yellow":
       print("Congratulations! You find the treasure and book a flight to Vegas. The End.")
-
+    else:
+      print("That isn't a valid option, and the gods of Python punish you for your hubris. A large foot comes crashing down from the sky and squishes you flat. You are dead. Game over.")
   else:
     print("You are devoured by man-eating trout. Tough break. Game over.")
 
