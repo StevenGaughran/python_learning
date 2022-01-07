@@ -28,15 +28,32 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
 
-for letter in letters:
-  rndm_ltr = random.sample(letters, nr_letters)
 
-for number in numbers:
-  rndm_nmbr = random.sample(numbers, nr_numbers)
+# aetimmes pointed out some ways to simplify and improve the code. The code I wrote technically didn't need "for" loops, despite the class focusing on them.
+# Also, random.choices was used instead of random.sample to allow for more unique password combinations.
+# I'm putting it below for future records, but felt like I should keep the Original up.
 
-for symbol in symbols:
-  rndm_symbl = random.sample(symbols, nr_symbols)
+rndm_ltr = random.choices(letters, k=nr_letters)
+
+rndm_nmbr = random.choices(numbers, k=nr_numbers)
+
+rndm_symbl = random.choices(symbols, k=nr_symbols)
 
 password = rndm_ltr + rndm_nmbr + rndm_symbl
 random.shuffle(password)
 print(password)
+
+# Here is the original code:
+
+# for letter in letters:
+#   rndm_ltr = random.sample(letters, nr_letters)
+
+# for number in numbers:
+#   rndm_nmbr = random.sample(numbers, nr_numbers)
+
+# for symbol in symbols:
+#   rndm_symbl = random.sample(symbols, nr_symbols)
+
+# password = rndm_ltr + rndm_nmbr + rndm_symbl
+# random.shuffle(password)
+# print(password)
