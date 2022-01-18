@@ -1,0 +1,9 @@
+A game of Hangman.
+
+I got a bit stuck on the nesting at some point, which was a bit frustrating. Also, the instructor didn't actually teach us how to import things from modules, though a good Google search sorted that out.
+
+I deviated from the lesson in that I made it easier to determine which letters you have already guessed by storing each guess in a list and checking against it.
+
+During an earlier step of the lesson I came up with a more elegant solution for the While loop; however, the instructors solution was designed to use an iterative variable (this is probably not the correct lingo), which I wish she would have let me know before I started. Ah well.
+
+In any case, here you are. Day 7 down.
