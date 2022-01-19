@@ -1,3 +1,13 @@
+#Day 8. So, this lesson was kinda weird. I was hanging in there for the first half, but found myself
+#scrambling at the end. Really unsure whether or not this lesson style is for me, but I shall press on
+#regardless.
+
+#For the sake of transparency, a lot of the code below is copied from the lecture. I need to look it over
+#after giving it a day or two to try and internalize what the instructor was trying to teach.
+
+#I had come up with a cleaner, more elegant code for doing the ciphper stuff in the early lessons, but
+#by the end I was forced to use their code, so alas. Such are the dangers of iterative lesson plans.
+
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 def caesar(start_text, shift_amount, cipher_direction):
