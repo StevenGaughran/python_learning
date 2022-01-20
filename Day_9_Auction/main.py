@@ -5,15 +5,16 @@ print(logo)
 name = input("What is your name?: ")
 bid = int(input("What is your bid?: "))
 
-auction = {
-    "Name": "",
-    "Bid": 0,
-}
+auction = {}
 
 def add_bid(auctioner_name, final_bid):
     finished = False
     new_bidder = ""
     while finished == False:
+        name = input("What is your name?: ")
+        bid = int(input("What is your bid? ")
+        auction[name] = bid
+                  
         if final_bid >= auction["Bid"]:
             auction.update({"Name": auctioner_name, "Bid": final_bid})
         new_bidder = input("Is there another bidder? Please type 'yes' or 'no': ").lower()
