@@ -1,4 +1,5 @@
-#a fortune teller, much  like the kids create with paper
+#A fortune teller, much  like the kids create with paper
+#This version is a big ol' if/else jumble. Hardly what I'd call clean.
 
 from turtle import color
 
