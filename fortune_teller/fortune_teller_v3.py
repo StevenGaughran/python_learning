@@ -19,6 +19,9 @@ fortune = {
     "yellow": "Gwinna farted!"
 }
 
+from fortune_art import logo
+print(logo)
+
 def fortune_game():
     game_on = True
     keep_guessing = 0
