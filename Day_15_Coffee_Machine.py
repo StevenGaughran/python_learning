@@ -48,14 +48,17 @@ def espresso():
     nickels = float(input("How many nickels are you inserting?"))*.05
     pennies = float(input("How many pennies are you inserting?"))*.01
     total_payment = round(quarters + dimes + nickels + pennies, 2)
-    RESOURCES['money'] += total_payment
     if total_payment == 1.50:
         print("Thank you! Enjoy your espresso!")
         RESOURCES['water'] -= MENU['espresso']['ingredients']['water']
         RESOURCES['coffee'] -= MENU['espresso']['ingredients']['coffee']
+        RESOURCES['money'] += total_payment
         return
     elif total_payment > 1.50:
-        print("Your change is $" + str(round(total_payment - 1.50, 2)))
+        RESOURCES['money'] += total_payment
+        change = str(round(total_payment - 1.50, 2))
+        RESOURCES['money'] -= change
+        print(f"Your change is ${change}.")
         print("Thank you! Enjoy your espresso!")
         RESOURCES['water'] -= MENU['espresso']['ingredients']['water']
         RESOURCES['coffee'] -= MENU['espresso']['ingredients']['coffee']
@@ -81,15 +84,18 @@ def latte():
     nickels = float(input("How many nickels are you inserting?")) * .05
     pennies = float(input("How many pennies are you inserting?")) * .01
     total_payment = round(quarters + dimes + nickels + pennies, 2)
-    RESOURCES['money'] += total_payment
     if total_payment == 2.50:
         print("Thank you! Enjoy your latte!")
         RESOURCES['water'] -= MENU['latte']['ingredients']['water']
         RESOURCES['coffee'] -= MENU['latte']['ingredients']['coffee']
         RESOURCES['milk'] -= MENU['latte']['ingredients']['milk']
+        RESOURCES['money'] += total_payment
         return
     elif total_payment > 2.50:
-        print("Your change is $" + str(round(total_payment - 1.50, 2)))
+        RESOURCES['money'] += total_payment
+        change = str(round(total_payment - 1.50, 2))
+        RESOURCES['money'] -= change
+        print(f"Your change is ${change}.")
         print("Thank you! Enjoy your latte!")
         RESOURCES['water'] -= MENU['latte']['ingredients']['water']
         RESOURCES['coffee'] -= MENU['latte']['ingredients']['coffee']
@@ -124,7 +130,10 @@ def cappuccino():
         RESOURCES['milk'] -= MENU['cappuccino']['ingredients']['milk']
         return
     elif total_payment > 2.50:
-        print("Your change is $" + str(round(total_payment - 1.50, 2)))
+        RESOURCES['money'] += total_payment
+        change = str(round(total_payment - 1.50, 2))
+        RESOURCES['money'] -= change
+        print(f"Your change is ${change}.")
         print("Thank you! Enjoy your cappuccino!")
         RESOURCES['water'] -= MENU['cappuccino']['ingredients']['water']
         RESOURCES['coffee'] -= MENU['cappuccino']['ingredients']['coffee']
@@ -142,11 +151,7 @@ def coffee_machine():
             print(f"Water: {RESOURCES.get('water')}mL")
             print(f"Milk: {RESOURCES.get('milk')}mL")
             print(f"Coffee: {RESOURCES.get('coffee')}g")
-            print(f"Money: ${RESOURCES.get('money')}")
-
-        # if user_choice == "report":
-        #     for x,y in RESOURCES.items():
-        #         print(x.title(),y)
+            print(f"Money: ${RESOURCES.get(round('money', 2))}")
         elif user_choice == "espresso":
             espresso()
         elif user_choice == "latte":
