@@ -1,1 +1,0 @@
-A project for my wife. Scrapes the national days of the current day from a website and emails them to her.
